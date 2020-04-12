@@ -1,10 +1,12 @@
 {
   "name": "@fireless/common",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "FireLess common package",
   "main": "index.js",
   "files": [
-    "./dist/**/**.(js|ts)"
+    "dist",
+    "index.js",
+    "index.d.ts"
   ],
   "scripts": {
     "build": "rm -rf ./dist && tsc",
@@ -41,7 +43,7 @@
     "lodash": "^4.17"
   },
   "devDependencies": {
-    "@fireless/core": "^0.0.3",
+    "@fireless/core": "^0.0",
     "@types/jest": "^25.2.1",
     "@types/lodash": "^4.14.149",
     "@types/node": "^13.11.1",
