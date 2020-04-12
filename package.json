@@ -1,6 +1,6 @@
 {
   "name": "@fireless/common",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "FireLess common package",
   "main": "index.js",
   "files": [
