@@ -1,6 +1,6 @@
-import {TransformPipe} from '../../type';
-import {Class} from 'utility-types';
-import {resolveDependency} from "@fireless/core";
+import { TransformPipe } from '../../type';
+import { Class } from 'utility-types';
+import { resolveDependency } from '@fireless/core';
 
 export function composeTransformPipes<R>(): Class<TransformPipe<R, R>>;
 export function composeTransformPipes<R1, R2>(
@@ -33,8 +33,7 @@ export function composeTransformPipes(
         .map(
           (
             pipeConstructor: Class<TransformPipe<any, any>>,
-          ): TransformPipe<any, any> =>
-              resolveDependency(pipeConstructor),
+          ): TransformPipe<any, any> => resolveDependency(pipeConstructor),
         )
         .reduce(
           (chain: Promise<any>, pipe: TransformPipe<any, any>): Promise<any> =>

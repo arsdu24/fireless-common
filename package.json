@@ -1,6 +1,6 @@
 {
   "name": "@fireless/common",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "FireLess common package",
   "main": "index.js",
   "files": [
@@ -15,7 +15,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",

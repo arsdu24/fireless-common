@@ -1,7 +1,7 @@
-import {AsyncResolver, resolveDependency} from '@fireless/core';
-import {TransformPipe} from '../../type';
-import {composeTransformPipes} from './compose-transform.pipes.helper';
-import {Class} from 'utility-types';
+import { AsyncResolver, resolveDependency } from '@fireless/core';
+import { TransformPipe } from '../../type';
+import { composeTransformPipes } from './compose-transform.pipes.helper';
+import { Class } from 'utility-types';
 
 export function asyncResolverFromTransformPipes<R>(): AsyncResolver<R, R>;
 export function asyncResolverFromTransformPipes<R1, R2>(
@@ -29,6 +29,5 @@ export function asyncResolverFromTransformPipes(
   ...pipes: Class<TransformPipe<any, any>>[]
 ): AsyncResolver<any, any> {
   return async (data: any) =>
-      resolveDependency(composeTransformPipes(...pipes))
-      .transform(data);
+    resolveDependency(composeTransformPipes(...pipes)).transform(data);
 }
