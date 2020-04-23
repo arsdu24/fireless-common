@@ -1,6 +1,6 @@
 import { Class } from 'utility-types';
 import {
-  HandlerParamDecorator,
+  KlassMethodParamDecorator,
   PipedDecorator,
   PipedHandlerParamDecorator,
   PipedHandlerParamDecoratorCreator,
@@ -10,13 +10,12 @@ import {
 export function createPipedHandlerParamDecorator<T extends {}>(
   resolver: PipedHandlerParamDecoratorCreator<T>,
 ): PipedHandlerParamDecorator<T> {
-
   return new Proxy(new Function(), {
     apply(
       target: Function,
       thisArg: any,
       pipes?: Class<TransformPipe<any, any>>[],
-    ): HandlerParamDecorator {
+    ): KlassMethodParamDecorator {
       return resolver({ pipes: pipes || [] });
     },
     get<K extends keyof T>(target: Function, key: K): PipedDecorator<T[K]> {
